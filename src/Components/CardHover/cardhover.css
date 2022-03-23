@@ -1,0 +1,49 @@
+.card-container{
+    text-align: center;
+    margin: 0;
+    width: 25%;
+    height: 400px;
+    position: fixed;
+    top: 15%;
+
+    border-radius: 5%;
+
+    
+}
+.hover-card-img{
+    height: 75px !important;
+}
+
+.hover-card-img img {
+    height: inherit;
+    width: inherit;
+}
+
+.status {
+    margin: 0 auto;
+    padding: 10px;
+    width: 150px;
+    background-color: rgb(254, 178, 62);
+    color: white;
+    font-size: medium;
+    font-weight: bold;
+    border-radius: 5px;
+}
+.plan-uses {
+    margin-top: 10px;
+    padding-left: 10%;
+    text-align: left;
+}
+.progress {
+    margin-left: 10%;
+    height: 5px !important;
+}
+.progress-bar {
+    background-color: rgb(254, 178, 62) !important;
+    width: 50%;
+}
+.green-btn {
+    font-size: 50px;
+    top: -0.2em;
+    color: green;
+}
