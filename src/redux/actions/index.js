@@ -10,10 +10,10 @@ export const updateStatus = (user, status) => {
 export const updateRole = (user, role) => {
   return { type: "UPDATE_ROLE", payload: { id: user.id, role: role } };
 };
-export const fetchUserdata = () => {
+export const fetchUserdata = (page) => {
   return async (dispatch) => {
     try {
-      const res = await fetch("https://reqres.in/api/users?page=1");
+      const res = await fetch(`https://reqres.in/api/users?page=${page}`);
       const result = await res.json();
       dispatch(storeData(result));
     } catch (error) {

@@ -1,6 +1,7 @@
 var initialState = {
   loading: true,
   selectedUser: null,
+  total_pages: null,
   users: [
     {
       id: 1,
@@ -101,6 +102,7 @@ const reducer = (state = initialState, action) => {
 
     case "STORE_DATA":
       let users_data = action.payload.apiData.data;
+      let totalPages = action.payload.apiData.total_pages;
       let usersArr = users_data.map((user) => {
         return {
           id: user.id,
@@ -112,7 +114,7 @@ const reducer = (state = initialState, action) => {
           role: "Read",
         };
       });
-      return { ...state, users: usersArr };
+      return { ...state, users: usersArr, total_pages: totalPages };
 
     default:
       return state;
