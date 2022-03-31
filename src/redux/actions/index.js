@@ -22,6 +22,7 @@ export const fetchUserdata = (pageNum, pageData) => {
       if (pageData && pageData[pageNum - 1]) {
         dispatch(storeData(pageData[pageNum - 1]));
       } else {
+        dispatch(loading(true));
         const res = await fetch(`https://reqres.in/api/users?page=${pageNum}`);
         const result = await res.json();
         dispatch(storeData(result));
@@ -34,6 +35,8 @@ export const fetchUserdata = (pageNum, pageData) => {
       }
     } catch (error) {
       console.log(error);
+    } finally {
+      dispatch(loading(false));
     }
   };
 };
@@ -45,4 +48,7 @@ export const saveDataInArray = (data) => {
     type: "SAVE_DATA_IN_ARRAY",
     payload: { apiData: data },
   };
+};
+export const loading = (flag) => {
+  return { type: "LOADING", payload: flag };
 };

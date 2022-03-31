@@ -59,6 +59,7 @@ var initialState = {
     // },
   ],
   page_list: [],
+  loading: true,
 };
 const reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -126,6 +127,8 @@ const reducer = (state = initialState, action) => {
         ...state,
         page_list: pageData,
       };
+    case "LOADING":
+      return { ...state, loading: action.payload };
     default:
       return state;
   }
